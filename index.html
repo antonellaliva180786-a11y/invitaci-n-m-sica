@@ -1,29 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Invitación con Música</title>
+  <title>Invitación de Cumpleaños</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #f9f7f7, #dbe2ef);
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #3f72af;
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.5em;
+      color: #112d4e;
+    }
+    iframe {
+      width: 1px;
+      height: 1px;
+      border: none;
+      position: absolute;
+      left: -9999px;
+    }
+  </style>
 </head>
 <body>
-  <audio id="bg-music" loop style="display:none;">
-    <source src="https://drive.google.com/uc?export=download&id=1tzVABmNL8QR0wKgFo0CR_tMhjN01GEAl" type="audio/mpeg">
-  </audio>
+  <h1>¡Estás Invitado!</h1>
+  <p>Ven a celebrar un cumpleaños muy especial con nosotros.</p>
 
-  <script>
-    var audio = document.getElementById('bg-music');
-
-    // Intentar reproducir automáticamente al cargar
-    window.addEventListener('load', function() {
-      audio.play().catch(function() {
-        console.log('Autoplay bloqueado, esperando interacción...');
-      });
-    });
-
-    // Si falla, reproducir al primer clic
-    document.addEventListener('click', function() {
-      audio.play();
-    }, { once: true });
-  </script>
+  <!-- Iframe oculto que carga el archivo de música -->
+  <iframe src="https://drive.google.com/uc?export=view&id=1tzVABmNL8QR0wKgFo0CR_tMhjN01GEAl"></iframe>
 </body>
 </html>
